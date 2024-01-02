@@ -1,16 +1,11 @@
 export const Data = [
   {
-    name: "Home",
-    to: "/",
-    children: [],
-  },
-  {
     name: "About",
     to: "/",
     children: [],
   },
   {
-    name: "Articles and Comementaries",
+    name: "Articles",
     to: "/",
     children: [
       {

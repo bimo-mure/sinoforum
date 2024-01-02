@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Burger, NavButton } from "./NavMenuStyles";
+import { Burger, NavButton, Logo, NavContainer } from "./NavMenuStyles";
 import SidebarMenu from "../SidebarMenu/SidebarMenu";
 import { AnimatePresence } from "framer-motion";
 
@@ -8,13 +8,16 @@ function SidebarNavigation() {
 
   return (
     <>
-      <NavButton
-        onClick={() => {
-          setIsActive(!isActive);
-        }}
-      >
-        <Burger />
-      </NavButton>
+      <NavContainer>
+        <NavButton
+          onClick={() => {
+            setIsActive(!isActive);
+          }}
+        >
+          <Burger />
+        </NavButton>
+        <Logo src="/logo.png"></Logo>
+      </NavContainer>
       <AnimatePresence>{isActive && <SidebarMenu />}</AnimatePresence>
     </>
   );

@@ -73,9 +73,9 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    
     color: var(--color-grey-700);
-
+    font-family: 'Lato', sans-serif;
     transition: color 0.3s, background-color 0.3s;
     min-height: 100vh;
     line-height: 1.5;
@@ -123,6 +123,19 @@ a {
 
 ul {
   list-style: none;
+}
+
+p {
+  font-family: 'Crimson Pro', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif;
 }
 
 p,
