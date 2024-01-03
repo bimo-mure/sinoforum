@@ -73,7 +73,7 @@ html {
 }
 
 body {
-    
+    margin: 0;
     color: var(--color-grey-700);
     font-family: 'Lato', sans-serif;
     transition: color 0.3s, background-color 0.3s;

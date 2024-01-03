@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Burger, NavButton, Logo, NavContainer } from "./NavMenuStyles";
+import { NavButton, Logo, NavContainer } from "./ButtonNavStyles";
 import SidebarMenu from "../SidebarMenu/SidebarMenu";
 import { AnimatePresence } from "framer-motion";
+import { HiMenu } from "react-icons/hi";
 
 function SidebarNavigation() {
   const [isActive, setIsActive] = useState(false);
@@ -13,8 +14,10 @@ function SidebarNavigation() {
           onClick={() => {
             setIsActive(!isActive);
           }}
+          whileTap={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 500 }}
         >
-          <Burger />
+          <HiMenu />
         </NavButton>
         <Logo src="/logo.png"></Logo>
       </NavContainer>

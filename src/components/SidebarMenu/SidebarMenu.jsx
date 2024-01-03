@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Data } from "../../data/NavigationData";
+import { SideBarMenu } from "../../data/NavigationData";
 import { BoxContainer, Menu, Nav, NavChild } from "./SidebarMenuStyles";
 import { Slide, NavItem } from "../../Anim/Animation";
 
@@ -12,7 +12,7 @@ function SidebarMenu() {
       exit="hidden"
     >
       <Menu variants={NavItem}>
-        {Data.map((item, index) =>
+        {SideBarMenu.map((item, index) =>
           item.children.length > 0 ? (
             <>
               <Nav variants={Slide} exit={{ x: 0, opacity: 1 }}>

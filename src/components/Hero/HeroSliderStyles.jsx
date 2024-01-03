@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { FiChevronLeft } from "react-icons/fi";
-import { FiChevronRight } from "react-icons/fi";
 import { motion } from "framer-motion";
 
 export const Container = styled.div`
@@ -26,14 +24,18 @@ export const Author = styled.p`
 `;
 
 export const InfoBox = styled.div`
-  position: absolute;
-  top: 65%;
-  left: 15%;
-  max-width: 50%;
+  position: relative;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  max-width: 110rem;
   z-index: 99;
 `;
 
-export const LeftArrow = styled(FiChevronLeft)`
+export const LeftArrow = styled(motion.button)`
+  background: transparent;
+  border: none;
+  border-radius: 100px;
   position: absolute;
   width: 5rem;
   height: 5rem;
@@ -43,9 +45,21 @@ export const LeftArrow = styled(FiChevronLeft)`
   color: var(--color-grey-0);
   z-index: 99;
   cursor: pointer;
+
+  & svg {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &:hover {
+    color: var(--color-red-500);
+  }
 `;
 
-export const RigthArrow = styled(FiChevronRight)`
+export const RigthArrow = styled(motion.button)`
+  background: transparent;
+  border: none;
+  border-radius: 100px;
   color: var(--color-grey-0);
   top: 50%;
   right: 0;
@@ -55,6 +69,15 @@ export const RigthArrow = styled(FiChevronRight)`
   position: absolute;
   z-index: 99;
   cursor: pointer;
+
+  & svg {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &:hover {
+    color: var(--color-red-500);
+  }
 `;
 
 export const Image = styled(motion.img)`

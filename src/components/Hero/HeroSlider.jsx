@@ -10,6 +10,8 @@ import {
   Shadow,
 } from "./HeroSliderStyles";
 import { SlideShow } from "../../Anim/Animation";
+import { FiChevronLeft } from "react-icons/fi";
+import { FiChevronRight } from "react-icons/fi";
 
 const slide = [
   {
@@ -58,7 +60,13 @@ function HeroSlider() {
 
   return (
     <Container>
-      <LeftArrow onClick={goToPreviousSlide} />
+      <LeftArrow
+        onClick={goToPreviousSlide}
+        whileTap={{ scale: 1.1 }}
+        transition={{ type: "spring", stiffness: 500 }}
+      >
+        <FiChevronLeft />
+      </LeftArrow>
       <Image
         src={slide[currentIndex].imgUrl}
         variants={SlideShow}
@@ -73,7 +81,13 @@ function HeroSlider() {
         <Title>{slide[currentIndex].title}</Title>
         <Author>{slide[currentIndex].author}</Author>
       </InfoBox>
-      <RigthArrow onClick={goToNextSlide} />
+      <RigthArrow
+        onClick={goToNextSlide}
+        whileTap={{ scale: 1.1 }}
+        transition={{ type: "spring", stiffness: 500 }}
+      >
+        <FiChevronRight />
+      </RigthArrow>
     </Container>
   );
 }

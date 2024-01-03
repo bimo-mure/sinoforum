@@ -1,9 +1,4 @@
-export const Data = [
-  {
-    name: "About",
-    to: "/",
-    children: [],
-  },
+export const SideBarMenu = [
   {
     name: "Articles",
     to: "/",
@@ -37,7 +32,48 @@ export const Data = [
     ],
   },
   {
+    name: "About",
+    to: "/",
+    children: [],
+  },
+  {
     name: "Career",
+    to: "/",
+    children: [],
+  },
+];
+
+export const HomeMenu = [
+  {
+    name: "Commentaries",
+    to: "/",
+  },
+  {
+    name: "Opinion",
+    to: "/",
+  },
+  {
+    name: "FSI Analysis",
+    to: "/",
+  },
+  {
+    name: "Event",
+    to: "/",
+  },
+  {
+    name: "FSI on the News",
+    to: "/",
+  },
+];
+
+export const HomeMenuExtra = [
+  {
+    name: "About",
+    to: "/",
+    children: [],
+  },
+  {
+    name: "Contact Us",
     to: "/",
     children: [],
   },
