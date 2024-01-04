@@ -25,10 +25,10 @@ export const Author = styled.p`
 
 export const InfoBox = styled.div`
   position: relative;
-  top: 80%;
+  top: 90%;
   left: 50%;
-  transform: translate(-50%, -80%);
-  max-width: 110rem;
+  transform: translate(-50%, -90%);
+  max-width: 120rem;
   z-index: 99;
 `;
 
@@ -98,11 +98,11 @@ export const Shadow = styled.div`
   height: 100%;
   background: linear-gradient(
     to bottom,
+    rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.2),
     rgba(0, 0, 0, 0.4),
     rgba(0, 0, 0, 0.6),
     rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.8),
     rgba(0, 0, 0, 1)
   );
   z-index: 1;

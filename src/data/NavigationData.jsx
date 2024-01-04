@@ -73,7 +73,7 @@ export const HomeMenuExtra = [
     children: [],
   },
   {
-    name: "Contact Us",
+    name: "Join Event",
     to: "/",
     children: [],
   },

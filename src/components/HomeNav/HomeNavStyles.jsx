@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const Menu = styled.div`
-  width: 110rem;
+  width: 120rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -17,6 +17,7 @@ export const MenuWrapper = styled.li`
   display: flex;
   flex-direction: row;
   gap: 3rem;
+  width: 82rem;
 `;
 
 export const MenuWrapperExtra = styled.li`
@@ -36,14 +37,15 @@ export const About = styled.h3`
   font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
-  background: var(--color-grey-100);
+  background: var(--color-grey-50);
 `;
 
 export const Contact = styled.h3`
   padding: 3rem 2rem;
+  width: 25rem;
   font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
   background: var(--color-red-600);
-  color: var(--color-grey-50);
+  color: var(--color-grey-0);
 `;
