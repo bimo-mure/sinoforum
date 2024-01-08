@@ -32,11 +32,16 @@ export const Category = styled.h3`
 
 export const Author = styled.div`
   color: var(--color-red-400);
-  font-weight: 600;
+  font-weight: 400;
 `;
 
 export const Container = styled(Link)`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  &:hover,
+  &:hover ${PostTitle}, &:hover ${Author} {
+    color: var(--color-red-400);
+  }
 `;

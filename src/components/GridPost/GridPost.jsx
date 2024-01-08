@@ -22,14 +22,14 @@ function GridPost({ title, data }) {
         <Heading>{title}</Heading>
         <GridContainer>
           <Main>
-            <MainContainer>
+            <MainContainer to={data[0].to}>
               <Image src={data[0].imgUrl}></Image>
               <PostTitle>{data[0].title}</PostTitle>
               <Author>{data[0].author}</Author>
             </MainContainer>
           </Main>
           {data.slice(1).map((item, index) => (
-            <Sidebar key={index}>
+            <Sidebar key={index} to={item.to}>
               <SidebarImg src={item.imgUrl}></SidebarImg>
               <TextBoxSidebar>
                 <SidebarPostTitle>{item.title}</SidebarPostTitle>
@@ -51,6 +51,7 @@ GridPost.propTypes = {
       category: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,
+      to: PropTypes.string.isRequired,
     })
   ).isRequired,
 };

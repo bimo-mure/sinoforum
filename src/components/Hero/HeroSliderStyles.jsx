@@ -17,9 +17,9 @@ export const Title = styled.h1`
   color: var(--color-grey-50);
 `;
 
-export const Author = styled.p`
+export const Author = styled.div`
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-red-400);
 `;
 

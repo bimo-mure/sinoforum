@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import {
   ContainerWraper,
-  GridContainer,
+  Container,
   Image,
   ContentContainer,
   Category,
@@ -13,21 +12,17 @@ import PropTypes from "prop-types";
 function ContentPost({ children }) {
   return (
     <ContainerWraper>
-      <GridContainer>
-        {children.map((item) => (
-          <>
-            <Link to={item.to}>
-              <Image src={item.imgUrl} />
-            </Link>
-            <ContentContainer to={item.to}>
-              <Category>{item.category}</Category>
-              <PostTitle>{item.title}</PostTitle>
-              <Author>{item.author}</Author>
-              <p>{item.excerpt}</p>
-            </ContentContainer>
-          </>
-        ))}
-      </GridContainer>
+      {children.map((item, index) => (
+        <Container key={index} to={item.to}>
+          <Image src={item.imgUrl} />
+          <ContentContainer>
+            <Category>{item.category}</Category>
+            <PostTitle>{item.title}</PostTitle>
+            <Author>{item.author}</Author>
+            <p>{item.excerpt}</p>
+          </ContentContainer>
+        </Container>
+      ))}
     </ContainerWraper>
   );
 }

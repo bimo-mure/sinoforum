@@ -30,6 +30,10 @@ export const MenuItem = styled.h3`
   font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
+
+  &:hover {
+    color: var(--color-red-400);
+  }
 `;
 
 export const About = styled.h3`

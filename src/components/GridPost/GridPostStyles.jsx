@@ -32,14 +32,6 @@ export const Main = styled.div`
   width: 78rem;
 `;
 
-export const Sidebar = styled.div`
-  padding: 2rem 0;
-  border-top: 1px solid var(--color-grey-100);
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-`;
-
 export const TextBoxSidebar = styled.div`
   display: flex;
   flex-direction: column;
@@ -60,6 +52,19 @@ export const SidebarPostTitle = styled.h1`
   text-transform: capitalize;
 `;
 
+export const Sidebar = styled(Link)`
+  padding: 2rem 0;
+  border-top: 1px solid var(--color-grey-100);
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+
+  &:hover,
+  &:hover ${SidebarPostTitle} {
+    color: var(--color-red-400);
+  }
+`;
+
 export const Image = styled.img`
   object-fit: cover;
 `;
@@ -74,7 +79,7 @@ export const PostTitle = styled.h1`
 
 export const Author = styled.div`
   color: var(--color-red-400);
-  font-weight: 600;
+  font-weight: 400;
 `;
 
 export const MainContainer = styled(Link)`

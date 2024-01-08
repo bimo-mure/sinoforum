@@ -3,6 +3,7 @@ import SidebarNavigation from "../components/ButtonNav/ButtonNav";
 import HomeNav from "../components/HomeNav/HomeNav";
 import RecentUpdates from "../components/RecentUpdates/RecentUpdates";
 import GridPost from "../components/GridPost/GridPost";
+import Footer from "../components/Footer/Footer";
 
 const data = [
   {
@@ -21,6 +22,7 @@ const data = [
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English",
     author: "Johanes Herlinajto",
     imgUrl: "/2.jpg",
+    to: "/",
   },
   {
     title: "Neque porro quisquam est qui dolorem ipsum",
@@ -45,13 +47,14 @@ function Home() {
   return (
     <div>
       <SidebarNavigation />
-      <HeroSlider />
+      <HeroSlider data={data} />
       <HomeNav />
       <RecentUpdates data={data} />
       <GridPost data={data} title="Opinion" />
       <GridPost data={data} title="Comentaries" />
       <GridPost data={data} title="FSI Analysis" />
       <GridPost data={data} title="FSI On The News" />
+      <Footer />
     </div>
   );
 }

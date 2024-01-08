@@ -78,3 +78,22 @@ export const HomeMenuExtra = [
     children: [],
   },
 ];
+
+export const FooterNav = [
+  {
+    name: "About",
+    to: "/",
+  },
+  {
+    name: "Term Of Use",
+    to: "/",
+  },
+  {
+    name: "Privacy",
+    to: "/",
+  },
+  {
+    name: "Contact Us",
+    to: "/",
+  },
+];
