@@ -18,9 +18,9 @@ export const Image = styled.img`
 export const PostTitle = styled.h1`
   line-height: 1.1;
   font-size: 2rem;
-  font-weight: 900;
+  font-weight: 800;
   color: var(--color-grey-700);
-  text-transform: uppercase;
+  text-transform: capitalize;
 `;
 
 export const Category = styled.h3`
@@ -39,9 +39,4 @@ export const Container = styled(Link)`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
-  &:hover,
-  &:hover ${Category}, &:hover ${PostTitle}, &:hover ${Author}, &:hover p {
-    color: var(--color-red-400);
-  }
 `;

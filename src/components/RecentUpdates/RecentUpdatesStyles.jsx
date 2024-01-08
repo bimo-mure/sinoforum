@@ -4,6 +4,7 @@ export const SectionWraper = styled.div`
   display: flex;
   width: 100vw;
   justify-content: center;
+  padding: 5rem 0;
 `;
 
 export const Heading = styled.h1`
