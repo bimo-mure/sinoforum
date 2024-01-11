@@ -4,10 +4,15 @@ export const Container = styled.div`
   display: flex;
   width: 100vw;
   justify-content: center;
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 export const Menu = styled.div`
-  width: 120rem;
+  max-width: 120rem;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -17,7 +22,7 @@ export const MenuWrapper = styled.li`
   display: flex;
   flex-direction: row;
   gap: 3rem;
-  width: 82rem;
+  max-width: 82rem;
 `;
 
 export const MenuWrapperExtra = styled.li`

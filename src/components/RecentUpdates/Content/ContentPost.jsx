@@ -6,6 +6,9 @@ import {
   Category,
   PostTitle,
   Author,
+  Excerpt,
+  ImageWraper,
+  Shadow,
 } from "./ContentPostStyles";
 import PropTypes from "prop-types";
 
@@ -14,12 +17,15 @@ function ContentPost({ children }) {
     <ContainerWraper>
       {children.map((item, index) => (
         <Container key={index} to={item.to}>
-          <Image src={item.imgUrl} />
+          <ImageWraper>
+            <Image src={item.imgUrl} />
+            <Shadow />
+          </ImageWraper>
           <ContentContainer>
             <Category>{item.category}</Category>
             <PostTitle>{item.title}</PostTitle>
             <Author>{item.author}</Author>
-            <p>{item.excerpt}</p>
+            <Excerpt>{item.excerpt}</Excerpt>
           </ContentContainer>
         </Container>
       ))}

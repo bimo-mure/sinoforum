@@ -3,6 +3,7 @@ import AppLayout from "./AppLayout";
 import Home from "./pages/Home";
 import Error from "./pages/Error";
 import GlobalStyles from "./styles/GlobalStyle";
+import { useDarkMode } from "./context/DarkModeContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,11 +19,12 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const { darkMode } = useDarkMode();
   return (
-    <>
+    <div className={darkMode ? "dark-mode" : "light-mode"}>
       <GlobalStyles />
       <RouterProvider router={router} />
-    </>
+    </div>
   );
 }
 

@@ -7,6 +7,10 @@ export const Container = styled.div`
   position: relative;
   overflow: hidden;
   z-index: 0;
+
+  @media screen and (max-width: 1200px) {
+    height: 40rem;
+  }
 `;
 
 export const Title = styled.h1`
@@ -14,7 +18,11 @@ export const Title = styled.h1`
   line-height: 1;
   font-size: 4rem;
   font-weight: 900;
-  color: var(--color-grey-50);
+  color: var(--color-brand-4);
+
+  @media screen and (max-width: 1200px) {
+    font-size: 2rem;
+  }
 `;
 
 export const Author = styled.div`
@@ -30,6 +38,11 @@ export const InfoBox = styled.div`
   transform: translate(-50%, -90%);
   max-width: 120rem;
   z-index: 99;
+
+  @media screen and (max-width: 1200px) {
+    max-width: 100rem;
+    padding: 0 5rem;
+  }
 `;
 
 export const LeftArrow = styled(motion.button)`

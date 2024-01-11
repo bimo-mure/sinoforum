@@ -18,6 +18,11 @@ export const Section = styled.div`
 
 export const Container = styled.div`
   width: 120rem;
+
+  @media screen and (max-width: 1200px) {
+    max-width: 100rem;
+    width: auto;
+  }
 `;
 
 export const GridContainer = styled.div`
@@ -25,11 +30,21 @@ export const GridContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
   gap: 5rem;
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
 `;
 
 export const Main = styled.div`
   grid-row: span 3;
   width: 78rem;
+
+  @media screen and (max-width: 1200px) {
+    max-width: 100rem;
+    width: auto;
+  }
 `;
 
 export const TextBoxSidebar = styled.div`
@@ -67,6 +82,13 @@ export const Sidebar = styled(Link)`
 
 export const Image = styled.img`
   object-fit: cover;
+
+  @media screen and (max-width: 1200px) {
+    max-width: 100rem;
+    width: auto;
+    max-height: 50rem;
+    height: auto;
+  }
 `;
 
 export const PostTitle = styled.h1`

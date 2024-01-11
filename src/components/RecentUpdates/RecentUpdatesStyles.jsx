@@ -4,7 +4,6 @@ export const SectionWraper = styled.div`
   display: flex;
   width: 100vw;
   justify-content: center;
-  padding: 5rem 0;
 `;
 
 export const Heading = styled.h1`
@@ -12,16 +11,35 @@ export const Heading = styled.h1`
   padding: 4rem 0;
   font-weight: 900;
   font-size: 5rem;
+
+  @media screen and (max-width: 550px) {
+    padding: 1rem 3rem;
+    font-size: 4rem;
+  }
 `;
 
 export const Section = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 120rem;
+  width: 100%;
+
+  @media screen and (max-width: 1200px) {
+    max-width: 100rem;
+    padding: 0 5rem;
+  }
+
+  @media screen and (max-width: 550px) {
+    padding: 0 0;
+  }
 `;
 
 export const Container = styled.div`
-  width: 120rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
 `;

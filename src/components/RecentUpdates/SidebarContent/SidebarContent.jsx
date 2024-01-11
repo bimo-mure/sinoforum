@@ -5,6 +5,7 @@ import {
   PostTitle,
   Category,
   Author,
+  TextBox,
 } from "./SidebarContentStyles";
 import PropTypes from "prop-types";
 
@@ -14,9 +15,11 @@ function SidebarContent({ children }) {
       {children.map((item, index) => (
         <Container key={index}>
           <Image src={item.imgUrl} />
-          <Category>{item.category}</Category>
-          <PostTitle>{item.title}</PostTitle>
-          <Author>{item.author}</Author>
+          <TextBox>
+            <Category>{item.category}</Category>
+            <PostTitle>{item.title}</PostTitle>
+            <Author>{item.author}</Author>
+          </TextBox>
         </Container>
       ))}
     </Section>

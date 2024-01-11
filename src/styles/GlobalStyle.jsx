@@ -2,8 +2,9 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 :root {
-  /* Red */
-  --color-red-50: #e98284;
+  &, &.light-mode {
+/* Red */
+--color-red-50: #e98284;
   --color-red-100: #e4696b;
   --color-red-200: #e05053;
   --color-red-300: #db373a;
@@ -12,16 +13,6 @@ const GlobalStyles = createGlobalStyle`
   --color-red-600: #bd0508;
   --color-red-700: #a80407;
   --color-red-800: #930406;
-
-  /* Orange */
-  --color-orange-50: #fec48b;
-  --color-orange-100: #fdb874;
-  --color-orange-200: #fdac5d;
-  --color-orange-300: #fda145;
-  --color-orange-400: #fc952e;
-  --color-orange-500: #fc8917;
-  --color-orange-600: #e37b15;
-  --color-orange-700: #ca6e12;
 
   /* Grey */
   --color-grey-0: #fff;
@@ -36,25 +27,65 @@ const GlobalStyles = createGlobalStyle`
   --color-grey-800: #211b20;
   --color-grey-900: #191418;
 
-  --color-brand-1: #292228;
-  --color-brand-2: #D20509;
-  --color-brand-3: #FC8917;
-  --color-brand-4: #E4E4EB;
-
   --backdrop-color: rgba(255, 255, 255, 0.1);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
+  
+  --image-grayscale: 0;
+  --image-opacity: 100%;
+
+  }
+
+  &.dark-mode {
+
+    /* Red */
+--color-red-50: #e98284;
+  --color-red-100: #e4696b;
+  --color-red-200: #e05053;
+  --color-red-300: #db373a;
+  --color-red-400: #d71e22;
+  --color-red-500: #d20509;
+  --color-red-600: #bd0508;
+  --color-red-700: #a80407;
+  --color-red-800: #930406;
+
+  /* Grey */
+  --color-grey-0: #000000;
+  --color-grey-50: #171717;
+  --color-grey-100: #2f2f2f;
+  --color-grey-200: #5e5d5e;
+  --color-grey-300: #757575;
+  --color-grey-400: #8c8c8c;
+  --color-grey-500: #d3d2d3;
+  --color-grey-600: #eae9ea;
+  --color-grey-700: #ecebec;
+  --color-grey-800: #eeedee;
+  --color-grey-900: #f9f8f9;
+
+  --backdrop-color: rgba(0, 0, 0, 0.3);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.4);
+
+  --image-grayscale: 10%;
+  --image-opacity: 90%;
+
+  }
+
+  --color-brand-1: #292228;
+  --color-brand-2: #D20509;
+  --color-brand-3: #FC8917;
+  --color-brand-4: #E4E4EB;
 
   --border-radius-tiny: 3px;
   --border-radius-sm: 5px;
   --border-radius-md: 7px;
   --border-radius-lg: 9px;
 
-  /* For dark mode */
-  --image-grayscale: 0;
-  --image-opacity: 100%;
+  
 }
 
 *,
