@@ -2,9 +2,9 @@ import {
   Container,
   Menu,
   Logo,
-  Wrapper,
   Rights,
   FooterContainer,
+  ImageWrapper,
 } from "./FooterStyles";
 import { Link } from "react-router-dom";
 
@@ -14,10 +14,10 @@ function Footer() {
   return (
     <Container>
       <Menu>
-        <Wrapper>
+        <ImageWrapper>
           <Logo src="./logo.png"></Logo>
-          <Rights>Forum Sinologi Indonesia. All Rights Reserved</Rights>
-        </Wrapper>
+        </ImageWrapper>
+        <Rights>Forum Sinologi Indonesia. All Rights Reserved</Rights>
 
         <FooterContainer>
           {HomeMenu.map((item, index) => (

@@ -8,6 +8,10 @@ export const Heading = styled.h1`
   font-size: 5rem;
   text-transform: capitalize;
   margin: 4rem 0;
+
+  @media screen and (max-width: 550px) {
+    font-size: 4rem;
+  }
 `;
 
 export const Section = styled.div`
@@ -17,11 +21,12 @@ export const Section = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 120rem;
+  max-width: 120rem;
 
   @media screen and (max-width: 1200px) {
     max-width: 100rem;
-    width: auto;
+    width: 100%;
+    padding: 0 3rem;
   }
 `;
 
@@ -43,7 +48,7 @@ export const Main = styled.div`
 
   @media screen and (max-width: 1200px) {
     max-width: 100rem;
-    width: auto;
+    width: 100%;
   }
 `;
 
@@ -57,6 +62,22 @@ export const SidebarImg = styled.img`
   object-fit: cover;
   width: 12rem;
   height: 12rem;
+
+  @media screen and (max-width: 1200px) {
+    max-width: 30rem;
+    max-height: 20rem;
+    height: auto;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 660px) {
+    max-width: 25rem;
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 12rem;
+    height: 12rem;
+  }
 `;
 
 export const SidebarPostTitle = styled.h1`
@@ -85,7 +106,7 @@ export const Image = styled.img`
 
   @media screen and (max-width: 1200px) {
     max-width: 100rem;
-    width: auto;
+    width: 100%;
     max-height: 50rem;
     height: auto;
   }
