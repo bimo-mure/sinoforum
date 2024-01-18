@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import {
   ContainerWraper,
   Container,
@@ -10,22 +11,42 @@ import {
   ImageWraper,
   Shadow,
 } from "./ContentPostStyles";
+import { getAllPost } from "../../../services/apiPosts";
 import PropTypes from "prop-types";
 
-function ContentPost({ children }) {
+function ContentPost() {
+  const { isLoading, data: recentUpdate = [] } = useQuery({
+    queryKey: ["recentUpdates"],
+    queryFn: getAllPost,
+  });
+  console.log(recentUpdate);
+
+  if (isLoading) return <div>Loading...</div>;
+
+  if (!recentUpdate || recentUpdate.length === 0) {
+    return <div>No data available.</div>;
+  }
+
   return (
     <ContainerWraper>
-      {children.map((item, index) => (
-        <Container key={index} to={item.to}>
+      {recentUpdate.data.map((item, index) => (
+        <Container key={index}>
           <ImageWraper>
-            <Image src={item.imgUrl} />
+            <Image
+              src={
+                import.meta.env.VITE_URL +
+                item.attributes.featuredImage.image.data.attributes.url
+              }
+            />
             <Shadow />
           </ImageWraper>
           <ContentContainer>
             <Category>{item.category}</Category>
-            <PostTitle>{item.title}</PostTitle>
-            <Author>{item.author}</Author>
-            <Excerpt>{item.excerpt}</Excerpt>
+            <PostTitle>{item.attributes.postTitle}</PostTitle>
+            <Author>
+              {item.attributes.postInfo.author.data.attributes.fullName}
+            </Author>
+            <Excerpt>{item.attributes.postExcerpt}</Excerpt>
           </ContentContainer>
         </Container>
       ))}

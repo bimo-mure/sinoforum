@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Error from "./pages/Error";
 import GlobalStyles from "./styles/GlobalStyle";
 import { useDarkMode } from "./context/DarkModeContext.jsx";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const router = createBrowserRouter([
   {
@@ -17,13 +19,17 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+const queryClient = new QueryClient();
 
 function App() {
   const { darkMode } = useDarkMode();
   return (
     <div className={darkMode ? "dark-mode" : "light-mode"}>
-      <GlobalStyles />
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools />
+        <GlobalStyles />
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </div>
   );
 }
