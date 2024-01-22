@@ -106,24 +106,6 @@ export const ContentContainer = styled.div`
   }
 `;
 
-export const Container = styled(Link)`
-  display: flex;
-  flex-direction: row;
-  gap: 5rem;
-  height: 100%;
-
-  &:hover,
-  &:hover ${PostTitle}, &:hover ${Author} {
-    color: var(--color-red-400);
-  }
-
-  @media screen and (max-width: 550px) {
-    flex-direction: column;
-    height: 45rem;
-    position: relative;
-  }
-`;
-
 export const Excerpt = styled.p`
   overflow: hidden;
   color: var(--color-grey-400);
@@ -132,4 +114,22 @@ export const Excerpt = styled.p`
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   margin: 0;
+`;
+
+export const Container = styled(Link)`
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  height: 100%;
+
+  &:hover,
+  &:hover ${PostTitle}, &:hover ${Author}, &:hover ${Excerpt} {
+    color: var(--color-red-400);
+  }
+
+  @media screen and (max-width: 550px) {
+    flex-direction: column;
+    height: 45rem;
+    position: relative;
+  }
 `;

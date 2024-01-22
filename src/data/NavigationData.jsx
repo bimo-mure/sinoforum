@@ -5,15 +5,15 @@ export const SideBarMenu = [
     children: [
       {
         name: "Commentaries",
-        to: "/",
+        to: "/commentaries",
       },
       {
         name: "Opinion",
-        to: "/",
+        to: "/opinion",
       },
       {
         name: "FSI Analysis",
-        to: "/",
+        to: "/fsi-analysis",
       },
     ],
   },
@@ -23,11 +23,11 @@ export const SideBarMenu = [
     children: [
       {
         name: "Event",
-        to: "/",
+        to: "/event",
       },
       {
         name: "FSI on the News",
-        to: "/",
+        to: "/fsi-on-the-news",
       },
     ],
   },
@@ -46,23 +46,23 @@ export const SideBarMenu = [
 export const HomeMenu = [
   {
     name: "Commentaries",
-    to: "/",
+    to: "/commentaries",
   },
   {
     name: "Opinion",
-    to: "/",
+    to: "/opinion",
   },
   {
     name: "FSI Analysis",
-    to: "/",
+    to: "/fsi-analysis",
   },
   {
     name: "Event",
-    to: "/",
+    to: "/event",
   },
   {
     name: "FSI on the News",
-    to: "/",
+    to: "/fsi-on-the-news",
   },
 ];
 

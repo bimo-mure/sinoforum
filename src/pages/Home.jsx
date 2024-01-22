@@ -1,9 +1,8 @@
 import HeroSlider from "../components/Hero/HeroSlider";
-import SidebarNavigation from "../components/ButtonNav/ButtonNav";
+
 import HomeNav from "../components/HomeNav/HomeNav";
 import RecentUpdates from "../components/RecentUpdates/RecentUpdates";
 import GridPost from "../components/GridPost/GridPost";
-import Footer from "../components/Footer/Footer";
 
 const data = [
   {
@@ -46,7 +45,6 @@ const data = [
 function Home() {
   return (
     <div>
-      <SidebarNavigation />
       <HeroSlider data={data} />
       <HomeNav />
       <RecentUpdates data={data} />
@@ -54,7 +52,6 @@ function Home() {
       <GridPost data={data} title="Comentaries" />
       <GridPost data={data} title="FSI Analysis" />
       <GridPost data={data} title="FSI On The News" />
-      <Footer />
     </div>
   );
 }

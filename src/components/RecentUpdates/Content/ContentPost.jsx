@@ -11,13 +11,13 @@ import {
   ImageWraper,
   Shadow,
 } from "./ContentPostStyles";
-import { getAllPost } from "../../../services/apiPosts";
+import { getRecentUpdates } from "../../../services/apiPosts";
 import PropTypes from "prop-types";
 
 function ContentPost() {
   const { isLoading, data: recentUpdate = [] } = useQuery({
     queryKey: ["recentUpdates"],
-    queryFn: getAllPost,
+    queryFn: getRecentUpdates,
   });
   console.log(recentUpdate);
 
@@ -30,7 +30,10 @@ function ContentPost() {
   return (
     <ContainerWraper>
       {recentUpdate.data.map((item, index) => (
-        <Container key={index}>
+        <Container
+          key={index}
+          to={`${item.attributes.categories.data[0].attributes.slug}/${item.attributes.slug}`}
+        >
           <ImageWraper>
             <Image
               src={
