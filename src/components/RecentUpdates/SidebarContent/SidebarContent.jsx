@@ -7,34 +7,48 @@ import {
   Author,
   TextBox,
 } from "./SidebarContentStyles";
-import PropTypes from "prop-types";
+import { useQuery } from "@tanstack/react-query";
+import { getFeatured } from "../../../services/PostRequest";
 
-function SidebarContent({ children }) {
+function SidebarContent() {
+  const { isLoading, data: featuredSidebar = [] } = useQuery({
+    queryKey: ["featuredSidebar"],
+    queryFn: getFeatured,
+  });
+
+  // console.log(featuredSidebar);
+
+  if (isLoading) return <div>Loading...</div>;
+
+  if (!featuredSidebar || featuredSidebar.length === 0) {
+    return <div>No data available.</div>;
+  }
   return (
     <Section>
-      {children.map((item, index) => (
-        <Container key={index}>
-          <Image src={item.imgUrl} />
+      {featuredSidebar.data.map((item, index) => (
+        <Container
+          key={index}
+          to={`${item?.attributes?.category?.data?.attributes?.slug}/${item?.attributes.slug}`}
+        >
+          <Image
+            src={
+              import.meta.env.VITE_URL +
+              item?.attributes?.featuredImage?.image?.data?.attributes?.url
+            }
+          />
           <TextBox>
-            <Category>{item.category}</Category>
-            <PostTitle>{item.title}</PostTitle>
-            <Author>{item.author}</Author>
+            <Category>
+              {item?.attributes?.category?.data?.attributes?.name}
+            </Category>
+            <PostTitle>{item?.attributes?.postTitle}</PostTitle>
+            <Author>
+              {item?.attributes?.postInfo?.author?.data?.attributes?.fullName}
+            </Author>
           </TextBox>
         </Container>
       ))}
     </Section>
   );
 }
-
-SidebarContent.propTypes = {
-  children: PropTypes.arrayOf(
-    PropTypes.shape({
-      imgUrl: PropTypes.string.isRequired,
-      category: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};
 
 export default SidebarContent;

@@ -26,6 +26,10 @@ const router = createBrowserRouter([
         element: <Commentaries />,
       },
       {
+        path: "/commentaries/:slug",
+        element: <Commentaries />,
+      },
+      {
         path: "/opinion",
         element: <Opinion />,
       },
@@ -38,11 +42,23 @@ const router = createBrowserRouter([
         element: <FsiAnalysis />,
       },
       {
+        path: "/fsi-analysis/:slug",
+        element: <FsiAnalysis />,
+      },
+      {
         path: "/event",
         element: <Event />,
       },
       {
+        path: "/event/:slug",
+        element: <Event />,
+      },
+      {
         path: "/fsi-on-the-news",
+        element: <FsiOnTheNews />,
+      },
+      {
+        path: "/fsi-on-the-news/:slug",
         element: <FsiOnTheNews />,
       },
     ],

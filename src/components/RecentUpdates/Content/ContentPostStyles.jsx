@@ -6,7 +6,7 @@ export const ContainerWraper = styled.div`
   width: 100%;
   flex-direction: column;
   display: flex;
-  gap: 5rem;
+  gap: 8rem;
 
   @media screen and (max-width: 1200px) {
     max-width: 100rem;

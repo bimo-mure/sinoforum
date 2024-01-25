@@ -14,8 +14,9 @@ import { FiChevronLeft } from "react-icons/fi";
 import { FiChevronRight } from "react-icons/fi";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { PostPropTypes } from "../../data/PostPropType";
 
-function HeroSlider({ data }) {
+function HeroSlider({ isLoading, data }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isNext, setIsNext] = useState(false);
   const timeRef = useRef();
@@ -45,6 +46,12 @@ function HeroSlider({ data }) {
     return () => clearTimeout(timeRef.current);
   }, [goToNextSlide]);
 
+  if (isLoading) return <div>Loading...</div>;
+
+  if (!data || data.length === 0) {
+    return <div>No data available.</div>;
+  }
+
   return (
     <Container>
       <LeftArrow
@@ -55,7 +62,11 @@ function HeroSlider({ data }) {
         <FiChevronLeft />
       </LeftArrow>
       <Image
-        src={data[currentIndex].imgUrl}
+        src={
+          import.meta.env.VITE_URL +
+          data[currentIndex]?.attributes?.featuredImage?.image?.data?.attributes
+            ?.url
+        }
         variants={SlideShow}
         initial="initial"
         animate="animate"
@@ -65,9 +76,16 @@ function HeroSlider({ data }) {
       />
       <Shadow />
       <InfoBox>
-        <Link to={data[currentIndex].to}>
-          <Title>{data[currentIndex].title}</Title>
-          <Author>{data[currentIndex].author}</Author>
+        <Link
+          to={`${data[currentIndex]?.attributes?.category?.data?.attributes?.slug}/${data[currentIndex]?.attributes.slug}`}
+        >
+          <Title>{data[currentIndex]?.attributes?.postTitle}</Title>
+          <Author>
+            {
+              data[currentIndex]?.attributes?.postInfo?.author?.data?.attributes
+                ?.fullName
+            }
+          </Author>
         </Link>
       </InfoBox>
       <RigthArrow
@@ -81,15 +99,13 @@ function HeroSlider({ data }) {
   );
 }
 
+HeroSlider.defaultProps = {
+  data: [],
+};
+
 HeroSlider.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      imgUrl: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-      to: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape(PostPropTypes)).isRequired,
 };
 
 export default HeroSlider;

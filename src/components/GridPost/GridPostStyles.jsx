@@ -34,7 +34,7 @@ export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
-  gap: 5rem;
+  gap: 4rem;
 
   @media screen and (max-width: 1200px) {
     grid-template-columns: 1fr;
@@ -89,7 +89,7 @@ export const SidebarPostTitle = styled.h1`
 `;
 
 export const Sidebar = styled(Link)`
-  padding: 2rem 0;
+  padding-top: 2rem;
   border-top: 1px solid var(--color-grey-100);
   display: flex;
   flex-direction: row;
@@ -102,13 +102,27 @@ export const Sidebar = styled(Link)`
 `;
 
 export const Image = styled.img`
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+`;
+
+export const ImageWraper = styled.div`
+  height: auto;
+  max-height: 50rem;
+  overflow: hidden;
 
   @media screen and (max-width: 1200px) {
-    max-width: 100rem;
+    max-height: 30rem;
+  }
+
+  @media screen and (max-width: 660px) {
+    max-height: 25rem;
+  }
+
+  @media screen and (max-width: 550px) {
+    max-width: none;
     width: 100%;
-    max-height: 50rem;
-    height: auto;
   }
 `;
 
@@ -128,7 +142,7 @@ export const Author = styled.div`
 export const MainContainer = styled(Link)`
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 1rem;
   padding: 2rem 0;
   border-top: 1px solid var(--color-grey-100);
 
