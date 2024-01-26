@@ -32,6 +32,14 @@ export async function getOpinion() {
   return result;
 }
 
+export async function getCategoryOpinion() {
+  const result = await GetRequest({
+    query:
+      "/posts?pagination[page]=1&pagination[pageSize]=6&[filters][category][slug][$eq]=opinion&sort[0]=createdAt:desc",
+  });
+  return result;
+}
+
 export async function getFSIOnTheNews() {
   const result = await GetRequest({
     query:

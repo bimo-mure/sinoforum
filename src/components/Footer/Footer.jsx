@@ -15,7 +15,7 @@ function Footer() {
     <Container>
       <Menu>
         <ImageWrapper>
-          <Logo src="./logo.png"></Logo>
+          <Logo src="/logo.png"></Logo>
         </ImageWrapper>
         <Rights>Forum Sinologi Indonesia. All Rights Reserved</Rights>
 

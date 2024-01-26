@@ -3,6 +3,7 @@ import { NavButton, Logo, NavContainer } from "./ButtonNavStyles";
 import SidebarMenu from "../SidebarMenu/SidebarMenu";
 import { AnimatePresence } from "framer-motion";
 import { HiMenu } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 function SidebarNavigation() {
   const [isActive, setIsActive] = useState(false);
@@ -19,7 +20,9 @@ function SidebarNavigation() {
         >
           <HiMenu />
         </NavButton>
-        <Logo src="/logo.png"></Logo>
+        <Link to={"/"}>
+          <Logo src="/logo.png" />
+        </Link>
       </NavContainer>
       <AnimatePresence>{isActive && <SidebarMenu />}</AnimatePresence>
     </>

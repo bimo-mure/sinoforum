@@ -32,7 +32,7 @@ const PostInfoPropTypes = {
 
 const FeaturedImagePropTypes = {
   id: PropTypes.number.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   image: PropTypes.shape({
     data: PropTypes.shape({
       id: PropTypes.number.isRequired,
