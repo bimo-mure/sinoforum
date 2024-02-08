@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./AppLayout";
 import Home from "./pages/Home";
 import Error from "./pages/Error";
+import Post from "./pages/Post/Post";
 import GlobalStyles from "./styles/GlobalStyle";
 import { useDarkMode } from "./context/DarkModeContext.jsx";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/commentaries/:slug",
-        element: <Commentaries />,
+        element: <Post />,
       },
       {
         path: "/opinion",
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/opinion/:slug",
-        element: <Opinion />,
+        element: <Post />,
       },
       {
         path: "/fsi-analysis",
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/fsi-analysis/:slug",
-        element: <FsiAnalysis />,
+        element: <Post />,
       },
       {
         path: "/event",
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/event/:slug",
-        element: <Event />,
+        element: <Post />,
       },
       {
         path: "/fsi-on-the-news",
@@ -59,7 +60,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/fsi-on-the-news/:slug",
-        element: <FsiOnTheNews />,
+        element: <Post />,
       },
     ],
   },

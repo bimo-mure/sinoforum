@@ -108,8 +108,7 @@ export const Image = styled.img`
 `;
 
 export const ImageWraper = styled.div`
-  height: auto;
-  max-height: 50rem;
+  height: 50rem;
   overflow: hidden;
 
   @media screen and (max-width: 1200px) {

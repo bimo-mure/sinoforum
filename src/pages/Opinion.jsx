@@ -1,4 +1,4 @@
-import Categories from "../components/Categories/Categories";
+import Categories from "./PostCategory/PostCategory";
 import { useQuery } from "@tanstack/react-query";
 import { getCategoryOpinion } from "../services/PostRequest";
 
@@ -9,9 +9,9 @@ function Opinion() {
   });
 
   return (
-    <div>
+    <>
       <Categories isLoading={isLoading} data={opinion.data} />
-    </div>
+    </>
   );
 }
 
